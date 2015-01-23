@@ -4,8 +4,9 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     public float MaxSpeed = 5;
-    public float MaxAccel = 10;
-    public bool Player = false;
+	public float MaxAccel = 10;
+	public float AnimationScale = 1;
+	public bool Player = false;
 
     public Animator _animator;
 
@@ -38,7 +39,7 @@ public class Movement : MonoBehaviour {
         if (dir.magnitude > 0.01)
             transform.localRotation = Quaternion.LookRotation(dir);
 
-        _animator.SetFloat("speed", rigidbody.velocity.magnitude);
+        _animator.SetFloat("speed", rigidbody.velocity.magnitude * AnimationScale);
     }
 
 	// Update is called once per frame
