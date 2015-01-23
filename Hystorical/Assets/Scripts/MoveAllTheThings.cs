@@ -7,9 +7,11 @@ public class MoveAllTheThings : MonoBehaviour {
 
     void FixedUpdate()
     {
-        var rigidBodies = GameObject.FindObjectsOfType<Rigidbody>();
+        var objects = GameObject.FindGameObjectsWithTag("sliding");
 
-        foreach (var rigidBody in rigidBodies)
-            rigidBody.MovePosition(rigidBody.position + Slide * Time.fixedDeltaTime);
+        foreach (var @object in objects)
+        {
+            @object.transform.position = (@object.transform.position + Slide * Time.fixedDeltaTime);
+        }
     }
 }
