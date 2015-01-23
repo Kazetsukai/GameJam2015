@@ -18,5 +18,14 @@ MonoBehaviour:
   PreferredRegion: 0
   AppID: 
   PingCloudServersOnAwake: 0
-  RpcList: []
+  RpcList:
+  - Chat
+  - DestroyRpc
+  - InstantiateRpc
+  - OnAwakeRPC
+  - PickupItemInit
+  - PunPickup
+  - PunPickupSimple
+  - PunRespawn
+  - RequestForPickupTimes
   DisableAutoOpenWizard: 0

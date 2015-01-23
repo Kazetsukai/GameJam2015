@@ -35,7 +35,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110226346}
   m_DstState: {fileID: 110255884}
-  m_TransitionDuration: .184698388
+  m_TransitionDuration: .144584432
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 3
@@ -55,8 +55,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110255884}
   m_DstState: {fileID: 110226346}
-  m_TransitionDuration: .23769854
-  m_TransitionOffset: .00273013068
+  m_TransitionDuration: .35436523
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed
@@ -87,7 +87,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: anim_run
-  m_Speed: 1
+  m_Speed: 1.39999998
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400004, guid: 73a20daff5d29bc47a9a936284f8e176, type: 3}
@@ -111,13 +111,13 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110255884}
-      second:
-      - {fileID: 110161358}
-    data:
       first: {fileID: 110226346}
       second:
       - {fileID: 110117638}
+    data:
+      first: {fileID: 110255884}
+      second:
+      - {fileID: 110161358}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -60, y: -72, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
