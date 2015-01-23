@@ -17,12 +17,13 @@ public class Movement : MonoBehaviour {
 
     void FixedUpdate()
     {
+		Vector3 target = Vector3.zero;
         if (Player)
         {
             var horiz = Input.GetAxis("Horizontal");
             var vert = Input.GetAxis("Vertical");
 
-            var target = Vector3.ClampMagnitude(new Vector3(horiz, 0, vert), 1) * MaxSpeed;
+            target = Vector3.ClampMagnitude(new Vector3(horiz, 0, vert), 1) * MaxSpeed;
             var diff = target - rigidbody.velocity;
             var velocityChange = diff;
             var maxAccelThisFrame = MaxAccel * Time.fixedDeltaTime;
@@ -39,7 +40,7 @@ public class Movement : MonoBehaviour {
         if (dir.magnitude > 0.01)
             transform.localRotation = Quaternion.LookRotation(dir);
 
-        _animator.SetFloat("speed", rigidbody.velocity.magnitude * AnimationScale);
+		_animator.SetFloat("speed", target.magnitude * AnimationScale);
     }
 
 	// Update is called once per frame

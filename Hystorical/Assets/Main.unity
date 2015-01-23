@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 10
   MaxAccel: 70
+  AnimationScale: 1
   Player: 1
   _animator: {fileID: 0}
 --- !u!1 &947889359
