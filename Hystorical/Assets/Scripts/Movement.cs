@@ -5,13 +5,13 @@ public class Movement : MonoBehaviour {
 
     public float MaxSpeed = 5;
     public float MaxAccel = 10;
-    public Vector3 Slide;
     public bool Player = false;
 
+    public Animator _animator;
 
 	// Use this for initialization
 	void Start () {
-	
+        _animator = GetComponentInChildren<Animator>();
 	}
 
     void FixedUpdate()
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour {
         if (dir.magnitude > 0.01)
             transform.localRotation = Quaternion.LookRotation(dir);
 
-        rigidbody.MovePosition(rigidbody.position + Slide * Time.fixedDeltaTime);
+        _animator.SetFloat("speed", rigidbody.velocity.magnitude);
     }
 
 	// Update is called once per frame

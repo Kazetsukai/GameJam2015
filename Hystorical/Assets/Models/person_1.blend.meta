@@ -21,6 +21,7 @@ ModelImporter:
     100030: shoulderL
     100032: shoulderR
     100034: torso
+    100036: mesh
     400000: Armature
     400002: armLLower
     400004: armLUpper
@@ -39,16 +40,19 @@ ModelImporter:
     400030: shoulderL
     400032: shoulderR
     400034: torso
+    400036: mesh
     4300000: Cube
+    4300002: mesh
     7400000: Default Take
     7400002: anim_idle
     7400004: anim_run
     7400006: anim_idle0
     9500000: //RootNode
     13700000: Cube
+    13700002: mesh
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 1
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
@@ -63,17 +67,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
-      firstFrame: 0
+      name: anim_run
+      takeName: anim_run
+      firstFrame: -1
       lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -134,70 +138,8 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature
-        weight: 1
-      - path: Armature/hip
-        weight: 1
-      - path: Armature/hip/legLThigh
-        weight: 1
-      - path: Armature/hip/legLThigh/legLLower
-        weight: 1
-      - path: Armature/hip/legRThigh
-        weight: 1
-      - path: Armature/hip/legRThigh/legRLower
-        weight: 1
-      - path: Armature/torso
-        weight: 1
-      - path: Armature/torso/chest
-        weight: 1
-      - path: Armature/torso/chest/neck
-        weight: 1
-      - path: Armature/torso/chest/neck/head
-        weight: 1
-      - path: Armature/torso/chest/shoulderL
-        weight: 1
-      - path: Armature/torso/chest/shoulderL/armLUpper
-        weight: 1
-      - path: Armature/torso/chest/shoulderL/armLUpper/armLLower
-        weight: 1
-      - path: Armature/torso/chest/shoulderR
-        weight: 1
-      - path: Armature/torso/chest/shoulderR/armRUpper
-        weight: 1
-      - path: Armature/torso/chest/shoulderR/armRUpper/armRLower
-        weight: 1
-      - path: Cube
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: anim_idle0
-      takeName: anim_idle
-      firstFrame: -1
-      lastFrame: 19
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
