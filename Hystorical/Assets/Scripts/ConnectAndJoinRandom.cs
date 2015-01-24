@@ -19,6 +19,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
     private bool _countingDown = false;
     private float _countDown = 5;
 
+    public GameObject PlayerObject;
 
     public virtual void Start()
     {
@@ -38,7 +39,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
         if (Application.loadedLevel == 0)
         {
-            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom)
+            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom && PhotonNetwork.playerList.Length > 2)
             {
                 _countingDown = true;
             }
@@ -84,6 +85,10 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
         Debug.Log("Woop woop");
 
+        var player = PhotonNetwork.Instantiate(PlayerObject.name, Vector3.zero, Quaternion.identity, 0);
+        player.GetComponent<PlayerController>().Player = true;
+        player.GetPhotonView().RPC("SetRemote", PhotonTargets.OthersBuffered, null);
+        
     }
 
     public void OnJoinedLobby()
