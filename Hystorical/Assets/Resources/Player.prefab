@@ -1385,7 +1385,7 @@ MonoBehaviour:
   MaxSpeed: 10
   MaxAccel: 10
   IsPanicked: 0
-  PanicDirection: {x: 0, y: 0, z: 0}
+  PanicDirection: -1
   PanicTimer: 0
   Player: 0
   NPCFollowFactor: 1

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float MaxAccel = 10;
 	
 	public bool IsPanicked = false;
-	public Vector3 PanicDirection = Vector3.zero;
+	public int PanicDirection = -1;
 	public int PanicTimer = 0;
 	
 	public bool Player = false;
@@ -26,15 +26,18 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _animator = GetComponentInChildren<Animator>();
-		//PanicDirection = Random.rotation
     }
     
     void FixedUpdate()
     {
 		if (IsPanicked) 
 		{
-			//Vector3.RotateTowards(rigidbody.velocity, PanicDirection,
-			
+			PanicTimer--;
+			if (PanicTimer < 0) {
+				PanicDirection = Random.Range(-45,45);
+				PanicTimer = Random.Range(30,50);
+			}
+			_target = Quaternion.AngleAxis(PanicDirection, Vector3.up) * Vector3.right;
 		}
         else if (Player)
         {
