@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PersonController : MovementController {
 	
-	
 	public bool IsPanicked = false;
 	public int PanicDirection = -1;
 	public int PanicTimer = 0;

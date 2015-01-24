@@ -714,6 +714,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   MaxSpeed: 10
   MaxAccel: 10
+  Remote: 0
   IsPanicked: 0
   PanicDirection: -1
   PanicTimer: 0
@@ -721,7 +722,6 @@ MonoBehaviour:
   NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
-  Remote: 0
 --- !u!54 &376048161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2193,6 +2193,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   MaxSpeed: 10
   MaxAccel: 40
+  Remote: 0
   IsPanicked: 0
   PanicDirection: -1
   PanicTimer: 0
@@ -2200,7 +2201,6 @@ MonoBehaviour:
   NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
-  Remote: 0
 --- !u!54 &557850427
 Rigidbody:
   m_ObjectHideFlags: 0
