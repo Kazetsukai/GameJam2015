@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelContainer: {fileID: 1551388291}
-  TimeBetweenLevels: 20
+  TimeBetweenLevels: 60
 --- !u!4 &2026081237
 Transform:
   m_ObjectHideFlags: 0

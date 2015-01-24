@@ -463,7 +463,7 @@ GameObject:
   - 4: {fileID: 481192}
   - 114: {fileID: 11481232}
   m_Layer: 0
-  m_Name: LevelUFO
+  m_Name: UFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2577,12 +2577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763c31419038985439a7ab3c922233f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
   MaxSpeed: 5
   MaxAccel: 5
+  _target: {x: 0, y: 0, z: 0}
   Remote: 0
   IsPanicked: 0
   IdleTimer: 0
+  Goal: {x: 0, y: 0, z: 0}
 --- !u!114 &11460578
 MonoBehaviour:
   m_ObjectHideFlags: 1

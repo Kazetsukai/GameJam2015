@@ -6,6 +6,7 @@ public class PlayBurnSoundWhenTouchLava : MonoBehaviour
 	public ParticleSystem smokeParticles;
 
 	bool burning;
+	bool soundPlayed;
 	// Use this for initialization
 	void Start () {
 	
@@ -26,9 +27,10 @@ public class PlayBurnSoundWhenTouchLava : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Lava")
 		{
-			if(audio != null)
+			if((audio != null) && (!soundPlayed))
 			{
 			this.gameObject.audio.Play();
+				soundPlayed=true;
 			}
 		}
 

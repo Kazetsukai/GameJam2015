@@ -32,7 +32,7 @@ public class LevelVolcano : Photon.MonoBehaviour {
 
 	public int numSpawned = 0;
 
-	float objectDespawnerDistance = 80f;
+	float objectDespawnerDistance = 120f;
 
 	public GameObject lava;
 	float lavaDistance = 21f;
@@ -40,10 +40,12 @@ public class LevelVolcano : Photon.MonoBehaviour {
 	public GameObject LevelBounds;
 	public GameObject ObjectDespawner;
 
+	public float levelSlideSpeed = -8f;
+
 	// Use this for initialization
 	void Start () 
 	{
-		camera.GetComponent<MoveAllTheThings> ().Slide = new Vector3(-2f,0,0);
+		camera.GetComponent<MoveAllTheThings> ().Slide = new Vector3(levelSlideSpeed,0,0);
 	
 		//spawn lava thing
 		LevelObjectsParent = new GameObject ("LevelObjects");
@@ -51,7 +53,7 @@ public class LevelVolcano : Photon.MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{	
 		//Update positions
 		ObjectDespawner.transform.position = worldCenterObject.transform.position - new Vector3(objectDespawnerDistance, 0 , 0);
@@ -115,7 +117,7 @@ public class LevelVolcano : Photon.MonoBehaviour {
 
 			if (rockSpawnTimer >= spawnTime)
 			{
-				var pos = worldCenterObject.transform.position + new Vector3(Random.Range (-20f, 20f),30, Random.Range(-levelWidth / 2, levelWidth / 2));
+				var pos = worldCenterObject.transform.position + new Vector3(Random.Range (0, 50f),30, Random.Range(-levelWidth / 2, levelWidth / 2));
 				var rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
 				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 
