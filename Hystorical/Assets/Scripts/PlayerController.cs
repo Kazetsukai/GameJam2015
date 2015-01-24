@@ -1,18 +1,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class Movement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 	
 	public Animator _animator;
 	
     public float MaxSpeed = 5;
 	public float MaxAccel = 10;
-	public float AnimationScale = 1;
+	
+	public bool IsPanicked = false;
+	public Quaternion PanicDirection = Quaternion.identity;
+	public int PanicTimer = 0;
+	
 	public bool Player = false;
+	
 	public float NPCFollowFactor = 1f;
 	public Vector3 NPCGoal = Vector3.zero;
-	public int NPCIntelligence = 0;
-	
+	public int NPCIntelligence = 0;	
 	private int NPCChangeMind = 0;
 
 	// Use this for initialization
@@ -23,7 +27,13 @@ public class Movement : MonoBehaviour {
     void FixedUpdate()
     {
 		Vector3 target = Vector3.zero;
-        if (Player)
+		if (IsPanicked) 
+		{
+			if (PanicDirection == Quaternion.identity) PanicDirection = Random.rotation;
+			
+			
+		}
+        else if (Player)
         {
             var horiz = Input.GetAxis("Horizontal");
             var vert = Input.GetAxis("Vertical");
@@ -63,10 +73,6 @@ public class Movement : MonoBehaviour {
         if (dir.magnitude > 0.01)
             transform.localRotation = Quaternion.LookRotation(dir);
 
-		_animator.SetFloat("speed", target.magnitude * AnimationScale);
+		_animator.SetFloat("speed", target.magnitude);
     }
-
-	// Update is called once per frame
-	void Update () {
-	}
 }
