@@ -40,7 +40,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
         if (Application.loadedLevel == 0)
         {
-            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom && PhotonNetwork.playerList.Length > 1)
+            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom && PhotonNetwork.playerList.Length < Time.realtimeSinceStartup - 2)
             {
                 _countingDown = true;
             }

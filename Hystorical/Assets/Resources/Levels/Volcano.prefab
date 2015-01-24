@@ -117,7 +117,7 @@ GameObject:
   - 4: {fileID: 462210}
   - 114: {fileID: 11462242}
   m_Layer: 0
-  m_Name: LevelVolcano
+  m_Name: Volcano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

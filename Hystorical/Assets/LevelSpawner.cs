@@ -3,7 +3,8 @@ using System.Collections;
 
 public class LevelSpawner : Photon.MonoBehaviour {
 
-    public float TimeBetweenLevels = 20;
+    public GameObject LevelContainer;
+    public float TimeBetweenLevels = 30;
 
     float _levelTimer;
     
@@ -31,8 +32,19 @@ public class LevelSpawner : Photon.MonoBehaviour {
     [RPC]
     void ChangeLevel(string levelName, int randomSeed)
     {
-        Debug.Log("WOOP " + levelName);
+        // Remove old level stuff
+        foreach (Transform transform in LevelContainer.transform)
+        {
+            Destroy(transform.gameObject);
+        }
 
+        var volcanoLevel = Resources.Load<GameObject>("Levels/Volcano");
+
+        if (volcanoLevel != null)
+        {
+            var level = (GameObject)Instantiate(volcanoLevel, Vector3.zero, Quaternion.identity);
+            level.transform.SetParent(LevelContainer.transform);
+        }
 
     }
 }
