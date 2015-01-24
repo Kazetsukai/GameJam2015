@@ -5,8 +5,8 @@ public class MovementController : MonoBehaviour {
 
 	public Animator _animator;
 	
-	public float MaxSpeed = 5;
-	public float MaxAccel = 10;
+	public float MaxSpeed;
+	public float MaxAccel;
 	
 	protected Vector3 _target = Vector3.zero;
 	
@@ -14,6 +14,12 @@ public class MovementController : MonoBehaviour {
 
 	void Start () {
 		_animator = GetComponentInChildren<Animator>();
+		Init();
+	}
+	
+	protected virtual void Init()
+	{
+		
 	}
 	
 	void FixedUpdate()
@@ -26,7 +32,7 @@ public class MovementController : MonoBehaviour {
 	
 	protected virtual void SetupTarget()
 	{
-	    
+	
 	}
 	
 	private void Move()
@@ -48,7 +54,7 @@ public class MovementController : MonoBehaviour {
 		if (dir.magnitude > 0.01)
 			transform.localRotation = Quaternion.LookRotation(dir);
 		
-		_animator.SetFloat("speed", _target.magnitude);
+		_animator.SetFloat("Speed", _target.magnitude);
 	}
 	
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
