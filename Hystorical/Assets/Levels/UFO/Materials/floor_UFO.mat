@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: floor_UFO
-  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,19 +17,30 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 93b5c760f18a9314db57f1a97f3ae9cc, type: 3}
-          m_Scale: {x: 4, y: 4}
+          m_Texture: {fileID: 2800000, guid: f62e3c63870347d4b9ee7e4defae91ed, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 97cbcc004e65cea4693470ec3a423366, type: 3}
-          m_Scale: {x: 3, y: 3}
+          m_Texture: {fileID: 2800000, guid: 8ab26ea8e63572645be3b39bc90b5169, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 8ab26ea8e63572645be3b39bc90b5169, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Parallax
+        second: .0333928578
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .735294104, g: .735294104, b: .735294104, a: 1}
+        second: {r: .397058845, g: .397058845, b: .397058845, a: 1}
