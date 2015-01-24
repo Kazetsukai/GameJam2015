@@ -610,10 +610,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   MaxSpeed: 10
-  MaxAccel: 70
-  AnimationScale: 1
+  MaxAccel: 10
+  IsPanicked: 0
+  PanicAngle: 20
+  PanicTimer: 0
   Player: 0
-  NPCFollowFactor: 0
+  NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
 --- !u!114 &11455466
@@ -628,7 +630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
-  yougondie: 9
 --- !u!136 &13636668
 CapsuleCollider:
   m_ObjectHideFlags: 1

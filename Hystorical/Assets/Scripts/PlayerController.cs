@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float MaxAccel = 10;
 	
 	public bool IsPanicked = false;
-	public Vector3 PanicDirection = Vector3.zero;
+	public int PanicAngle = 0;
 	public int PanicTimer = 0;
 	
 	public bool Player = false;
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _animator = GetComponentInChildren<Animator>();
-		PanicDirection = Random.rotation
     }
     
     void FixedUpdate()
@@ -30,8 +29,14 @@ public class PlayerController : MonoBehaviour {
 		Vector3 target = Vector3.zero;
 		if (IsPanicked) 
 		{
-			//Vector3.RotateTowards(rigidbody.velocity, PanicDirection,
+			target = Quaternion.AngleAxis(PanicAngle, Vector3.up) * Vector3.right;
 			
+			if (PanicTimer < 0) 
+			{
+				PanicAngle = Random.Range(-45,45);
+				PanicTimer = Random.Range(20,40);
+			}
+			PanicTimer--;
 		}
         else if (Player)
         {
@@ -42,7 +47,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-        	if (NPCChangeMind <= 0) {
+        	if (NPCChangeMind <= 0) 
+        	{
 				NPCGoal = new Vector3(Random.Range(-15f + 20f * NPCIntelligence, 15f),0,Random.Range(-15f,15f));
         		NPCChangeMind = Random.Range(40,400);
 			}
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 			target = (Quaternion.AngleAxis(Random.value * 360, Vector3.up) * Vector3.right) + (posDiff * NPCFollowFactor);
 		}
 		
-		Vector3 targetNormalised = Vector3.ClampMagnitude(target, 1) * MaxSpeed;
+		Vector3 targetNormalised = Vector3.ClampMagnitude(target, 1) * MaxSpeed * (IsPanicked ? 1.5f : 1);
 		
 		var diff = targetNormalised - rigidbody.velocity;
 		var velocityChange = diff;
