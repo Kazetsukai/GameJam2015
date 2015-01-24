@@ -130,7 +130,7 @@ public class LevelVolcano : Photon.MonoBehaviour {
 	[RPC]
 	public void SpawnBoulder(Vector3 pos, Vector3 rotation, Vector3 scale)
 	{
-		GameObject newBoulder = (GameObject)Instantiate(plantPrefab);
+		GameObject newBoulder = (GameObject)Instantiate(boulderPrefab);
 		newBoulder.transform.position = pos;
 		newBoulder.transform.localEulerAngles += rotation;
 		newBoulder.transform.localScale = scale;
