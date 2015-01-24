@@ -1020,7 +1020,9 @@ MonoBehaviour:
   _animator: {fileID: 0}
   MaxSpeed: 10
   MaxAccel: 70
-  AnimationScale: 1
+  IsPanicked: 0
+  PanicDirection: {x: 0, y: 0, z: 0, w: 1}
+  PanicTimer: 0
   Player: 1
   NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
@@ -1430,7 +1432,9 @@ MonoBehaviour:
   _animator: {fileID: 0}
   MaxSpeed: 10
   MaxAccel: 70
-  AnimationScale: 1
+  IsPanicked: 0
+  PanicDirection: {x: 0, y: 0, z: 0, w: 1}
+  PanicTimer: 0
   Player: 0
   NPCFollowFactor: 0
   NPCGoal: {x: 0, y: 0, z: 0}
@@ -1478,7 +1482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
-  yougondie: 9
 --- !u!1 &1036148265
 GameObject:
   m_ObjectHideFlags: 0
