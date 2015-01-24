@@ -9,20 +9,23 @@ public class CowController : MovementController {
 		
 	protected override void SetupTarget() 
 	{
-		//_target = GameObject.Find("WorldCenterMarker").transform.position - gameObject.transform.position;
+		var centerMarker = GameObject.Find("WorldCenterMarker");
+		
 		if (IdleTimer < 0) 
-		{
-			var centerMarker = GameObject.Find("WorldCenterMarker");			
-			Goal = new Vector3(Random.Range(-15f, 15f),0,Random.Range(-14f, 14f));
-			_target = centerMarker.transform.position + Goal;
+		{		
+			Goal = new Vector3(Random.Range(-14f, 14f),0,Random.Range(-14f, 14f));
 			
 			IdleTimer = Random.Range(100, 250);
 		}
 		
-		var diffToTarget = rigidbody.position - _target;
+		var diffToTarget = rigidbody.position - (centerMarker.transform.position + Goal);
 		if (diffToTarget.magnitude < 1) 
 		{
 			IdleTimer--;
 		}
+		
+		var target = (centerMarker.transform.position + Goal) - transform.position;
+		
+		_target = target.magnitude < 1 ? Vector3.zero : target;
 	}
 }
