@@ -20,7 +20,5 @@ public class OnCollision_DespawnLevelObject : MonoBehaviour {
 			//Despawn level object if it collides with this object
 			Destroy(col.gameObject);
 		}
-
-		Debug.Log (col.gameObject.tag);
 	}
 }
