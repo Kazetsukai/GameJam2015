@@ -3,10 +3,12 @@ using System.Collections;
 
 public class MovementController : Photon.MonoBehaviour {
 
-	private Animator _animator;
+	private Animator _animator = null;
 	
 	public float MaxSpeed;
 	public float MaxAccel;
+	
+	public bool LookForwards;
 	
 	public Vector3 _target = Vector3.zero;
 	
@@ -54,7 +56,7 @@ public class MovementController : Photon.MonoBehaviour {
 		if (dir.magnitude > 0.01)
 			transform.localRotation = Quaternion.LookRotation(dir);
 		
-		_animator.SetFloat("Speed", _target.magnitude);
+		if (_animator.runtimeAnimatorController != null) _animator.SetFloat("Speed", _target.magnitude);
 	}
 	
 	public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

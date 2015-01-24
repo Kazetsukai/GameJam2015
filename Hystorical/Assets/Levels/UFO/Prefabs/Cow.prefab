@@ -611,7 +611,7 @@ MonoBehaviour:
   _target: {x: 0, y: 0, z: 0}
   Remote: 0
   IsPanicked: 0
-  IdleTimer: 0
+  IdleTimer: -1
   Goal: {x: 0, y: 0, z: 0}
 --- !u!114 &11446592
 MonoBehaviour:
