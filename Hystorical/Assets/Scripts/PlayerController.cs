@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _animator = GetComponentInChildren<Animator>();
-		PanicDirection = Random.rotation
+		//PanicDirection = Random.rotation
     }
     
     void FixedUpdate()

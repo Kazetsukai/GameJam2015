@@ -15,7 +15,7 @@ public class OnCollision_DespawnLevelObject : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag == "LevelObject")
+		if ((col.gameObject.tag == "LevelObject") || (col.gameObject.tag == "LevelFloor"))
 		{
 			//Despawn level object if it collides with this object
 			Destroy(col.gameObject);

@@ -13,7 +13,7 @@ GameObject:
   - 65: {fileID: 6507832}
   m_Layer: 0
   m_Name: pf_LevelFloor
-  m_TagString: LevelObject
+  m_TagString: LevelFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

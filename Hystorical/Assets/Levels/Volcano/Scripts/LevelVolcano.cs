@@ -13,7 +13,7 @@ public class LevelVolcano : MonoBehaviour {
 	public GameObject plantPrefab;
 	public GameObject rockPrefab;
 
-	public float levelWidth = 32f;
+	public float levelWidth = 30f;
 
 	public float boulderSpawnRate = 1f;
 	public float treeSpawnRate = 1f;
@@ -75,7 +75,7 @@ public class LevelVolcano : MonoBehaviour {
 		if (boulderSpawnTimer >= spawnTime)
 		{
 			GameObject newBoulder = (GameObject)Instantiate(boulderPrefab);
-			newBoulder.transform.position = worldCenterObject.transform.position + new Vector3(spawnDistance,0, Random.Range(-levelWidth / 2, levelWidth / 2));
+			newBoulder.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
 			newBoulder.transform.localEulerAngles = new Vector3(newBoulder.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newBoulder.transform.localEulerAngles.z);
 			newBoulder.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 			newBoulder.transform.parent = LevelObjectsParent.transform;
@@ -87,7 +87,7 @@ public class LevelVolcano : MonoBehaviour {
 		if (plantSpawnTimer >= spawnTime)
 		{
 			GameObject newPlant = (GameObject)Instantiate(plantPrefab);
-			newPlant.transform.position = worldCenterObject.transform.position + new Vector3(spawnDistance,0, Random.Range(-levelWidth / 2, levelWidth / 2));
+			newPlant.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
 			newPlant.transform.localEulerAngles = new Vector3(newPlant.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newPlant.transform.localEulerAngles.z);
             newPlant.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 			newPlant.transform.parent = LevelObjectsParent.transform;
@@ -98,7 +98,7 @@ public class LevelVolcano : MonoBehaviour {
 		if (treeSpawnTimer >= spawnTime)
 		{
 			GameObject newTree = (GameObject)Instantiate(treePrefab);
-			newTree.transform.position = worldCenterObject.transform.position + new Vector3(spawnDistance,0, Random.Range(-levelWidth / 2, levelWidth / 2));
+			newTree.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
 			newTree.transform.localEulerAngles = new Vector3(newTree.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newTree.transform.localEulerAngles.z);
 			newTree.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 			newTree.transform.parent = LevelObjectsParent.transform;
