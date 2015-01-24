@@ -53,6 +53,9 @@ public class LevelVolcano : MonoBehaviour {
 		if (floorSpawnTimer >= spawnTime)
 		{ 
 			GameObject newFloor = (GameObject)Instantiate(floorPrefab);
+			int something = worldCenterObject.transform.position.x / 16f;
+
+
 			newFloor.transform.position = new Vector3(floorCount * 32,0, 0);
 			floorCount++;
 			//newFloor.transform.parent = LevelObjectsParentEmpty.transform;// DON'T DO THIS!! Makes floor slide along map...	
