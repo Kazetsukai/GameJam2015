@@ -36,9 +36,7 @@ public class MovementController : Photon.MonoBehaviour {
 	}
 	
 	private void Move()
-	{
-		Debug.Log("Move " + gameObject.name);
-		
+	{		
 		Vector3 targetNormalised = Vector3.ClampMagnitude(_target, 1) * MaxSpeed;
 		
 		var diff = targetNormalised - rigidbody.velocity;
