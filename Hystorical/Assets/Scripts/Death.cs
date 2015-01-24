@@ -22,11 +22,6 @@ public class Death : MonoBehaviour {
 	void FixedUpdate () 
 	{		
 		UpdateVelocities(CharacterAvatarObject.transform);
-		
-		if (Input.GetKeyDown(KeyCode.KeypadEnter))
-		{
-            Die ();
-        }
         
 		if (DieTimer >= 0) 
 		{
