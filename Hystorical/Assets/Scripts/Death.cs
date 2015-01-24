@@ -6,6 +6,8 @@ public class Death : MonoBehaviour {
 
 	public int DieTimer = -1;
 	
+	public AudioClip[] DeathSounds;
+	
 	public GameObject Ragdoll;
 	public GameObject CharacterAvatarObject;
 	
@@ -23,7 +25,12 @@ public class Death : MonoBehaviour {
 	{		
 		UpdateVelocities(CharacterAvatarObject.transform);
         
-		if (DieTimer >= 0) 
+		if (Input.GetKeyDown(KeyCode.KeypadEnter))
+		{
+			Die ();
+		}
+        
+        if (DieTimer >= 0) 
 		{
 			DieTimer--;
 		}
@@ -52,6 +59,10 @@ public class Death : MonoBehaviour {
 	
 	public void Die()
 	{
+		var deathsound = GetComponent<AudioSource>();
+		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
+		deathsound.Play();
+		
 		GetComponent<CapsuleCollider>().enabled = false;
 		
 		rigidbody.useGravity = false;
