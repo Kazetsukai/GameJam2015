@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoConnect: 1
   Version: 1
-  PlayerObject: {fileID: 169082, guid: f2e2bd852718bfe459dd4b1e433a2d74, type: 2}
+  PlayerObject: {fileID: 101400, guid: f2e2bd852718bfe459dd4b1e433a2d74, type: 2}
 --- !u!4 &520797486
 Transform:
   m_ObjectHideFlags: 0
