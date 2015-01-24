@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11401470}
   - 114: {fileID: 11401474}
   - 82: {fileID: 8201474}
+  - 114: {fileID: 11473268}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -1438,6 +1439,17 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!114 &11473268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fd17dc49b7d6541b6dda0ac8b13d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13501474
 SphereCollider:
   m_ObjectHideFlags: 1

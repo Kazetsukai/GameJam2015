@@ -37,6 +37,8 @@ public class LevelVolcano : Photon.MonoBehaviour {
 	public GameObject lava;
 	float lavaDistance = 21f;
 
+    public GameObject NPCPrefab;
+
 	public GameObject LevelBounds;
 	public GameObject ObjectDespawner;
 
@@ -50,6 +52,18 @@ public class LevelVolcano : Photon.MonoBehaviour {
 		//spawn lava thing
 		LevelObjectsParent = new GameObject ("LevelObjects");
 		LevelObjectsParent.transform.parent = this.transform;
+
+        if (NPCPrefab != null)
+        {
+            // Spawn NPCs
+            for (int i = 0; i < 14; i++)
+            {
+                var position = Random.insideUnitSphere;
+                position.y = 0;
+                
+                Instantiate(NPCPrefab, position, Quaternion.identity);
+            }
+        }
 	}
 	
 	// Update is called once per frame
