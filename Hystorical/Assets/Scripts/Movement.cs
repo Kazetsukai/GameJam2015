@@ -7,7 +7,10 @@ public class Movement : MonoBehaviour {
 	public float MaxAccel = 10;
 	public float AnimationScale = 1;
 	public bool Player = false;
-	public float Xdiff = 0;
+	public Vector3 target = Vector3.zero;
+	public float NPCFollowFactor = 1f;
+	public Vector3 NPCGoal = Vector3.zero;
+	public int NPCChangeMind = 0;
 	
     public Animator _animator;
 
@@ -18,7 +21,6 @@ public class Movement : MonoBehaviour {
 
     void FixedUpdate()
     {
-		Vector3 target = Vector3.zero;
 		
         if (Player)
         {
@@ -29,11 +31,18 @@ public class Movement : MonoBehaviour {
         }
         else
         {
-			var centerX = GameObject.Find("WorldCenterMarker").transform.localPosition.x;
-        	var selfX = transform.localPosition.x;
-			Xdiff = centerX - selfX;
+        	if (NPCChangeMind <= 0) {
+        		NPCGoal = new Vector3(Random.Range(-15f, 15f),0,Random.Range(-15f,15f));
+        		NPCChangeMind = Random.Range(40,400);
+			}
 			
-			target = /*Quaternion.AngleAxis(Random.value * 360, Vector3.up) * rigidbody.velocity +*/ (Vector3.right*Xdiff);
+			NPCChangeMind--;
+        	
+			var goal = GameObject.Find("WorldCenterMarker").transform.position + NPCGoal;
+        	var self = rigidbody.transform.position;
+			var posDiff = goal - self;
+			
+			target = (Quaternion.AngleAxis(Random.value * 360, Vector3.up) * Vector3.right) + (posDiff * NPCFollowFactor);
 		}
 		
 		Vector3 targetNormalised = Vector3.ClampMagnitude(target, 1) * MaxSpeed;
