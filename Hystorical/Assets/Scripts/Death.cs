@@ -15,6 +15,8 @@ public class Death : MonoBehaviour {
 	private Dictionary<string, Vector3> _lastPos = new Dictionary<string, Vector3>();
 	private Dictionary<string, Quaternion> _angularVelocities = new Dictionary<string, Quaternion>();
 	private Dictionary<string, Vector3> _lastForward = new Dictionary<string, Vector3>();
+
+	public GameObject particleElectric;
 	
 	// Use this for initialization
 	void Start () 
@@ -65,9 +67,16 @@ public class Death : MonoBehaviour {
 			controller.IsPanicked = true;
 		}
 	}
+
+	public void DieByElectricity()
+	{
+		Instantiate(particleElectric, this.transform.position, new Quaternion());
+		Die();
+	}
 	
 	public void Die()
 	{		
+
 		GetComponent<CapsuleCollider>().enabled = false;
 		
 		rigidbody.useGravity = false;

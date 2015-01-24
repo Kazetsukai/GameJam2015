@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class LevelVolcano : MonoBehaviour {
 
+	public GameObject camera;
 	public GameObject worldCenterObject;
 	private GameObject LevelObjectsParent;
 
@@ -42,6 +43,8 @@ public class LevelVolcano : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		camera.GetComponent<MoveAllTheThings> ().Slide = new Vector3(-2f,0,0);
+	
 		//spawn lava thing
 		LevelObjectsParent = new GameObject ("LevelObjects");
 		LevelObjectsParent.transform.parent = this.transform;
