@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 2f75addaf68f0434f8066ddda33ef06e
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Ragdoll: {instanceID: 0}
+  - CharacterAvatarObject: {instanceID: 0}
+  - particleElectric: {fileID: 184250, guid: 57c29d8a3fb2afa42a30c49d3aceccfc, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

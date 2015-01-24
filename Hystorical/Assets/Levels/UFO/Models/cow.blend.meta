@@ -42,7 +42,7 @@ ModelImporter:
     400034: //RootNode
     400036: Cube
     4300000: Cube
-    7400000: Default Take
+    7400000: anim_cowidle
     7400002: anim_cowrun
     9500000: //RootNode
     13700000: Cube
@@ -61,13 +61,141 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: anim_cowrun
+      takeName: anim_cowrun
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_010
+        weight: 1
+      - path: Armature/Bone/Bone_010/Bone_012
+        weight: 1
+      - path: Armature/Bone/Bone_010/Bone_012/Bone_014
+        weight: 1
+      - path: Armature/Bone/Bone_011
+        weight: 1
+      - path: Armature/Bone/Bone_011/Bone_013
+        weight: 1
+      - path: Armature/Bone/Bone_011/Bone_013/Bone_015
+        weight: 1
+      - path: Armature/Bone_003
+        weight: 1
+      - path: Armature/Bone_003/Bone_004
+        weight: 1
+      - path: Armature/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone_003/Bone_004/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Bone_003/Bone_007
+        weight: 1
+      - path: Armature/Bone_003/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Bone_003/Bone_007/Bone_008/Bone_009
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_cowidle
+      takeName: Default Take
+      firstFrame: 6.69999981
+      lastFrame: 7.5999999
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone/Bone_010
+        weight: 1
+      - path: Armature/Bone/Bone_010/Bone_012
+        weight: 1
+      - path: Armature/Bone/Bone_010/Bone_012/Bone_014
+        weight: 1
+      - path: Armature/Bone/Bone_011
+        weight: 1
+      - path: Armature/Bone/Bone_011/Bone_013
+        weight: 1
+      - path: Armature/Bone/Bone_011/Bone_013/Bone_015
+        weight: 1
+      - path: Armature/Bone_003
+        weight: 1
+      - path: Armature/Bone_003/Bone_004
+        weight: 1
+      - path: Armature/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone_003/Bone_004/Bone_005/Bone_006
+        weight: 1
+      - path: Armature/Bone_003/Bone_007
+        weight: 1
+      - path: Armature/Bone_003/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Bone_003/Bone_007/Bone_008/Bone_009
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

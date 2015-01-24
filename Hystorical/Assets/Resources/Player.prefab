@@ -1404,8 +1404,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
+  DeathSounds:
+  - {fileID: 8300000, guid: 1a1dd723fd53793458a2ecd752c767b4, type: 3}
+  - {fileID: 8300000, guid: 03dd50931c94f1b498f3dce4a1e24435, type: 3}
+  - {fileID: 8300000, guid: c14b30080fd47654ea487f3365b42a16, type: 3}
+  - {fileID: 8300000, guid: d848115d9468a664ca32f4b5a669f8ab, type: 3}
+  - {fileID: 8300000, guid: 0f118a6f253708a4089dc35e04a5ef86, type: 3}
   Ragdoll: {fileID: 117080}
   CharacterAvatarObject: {fileID: 136668}
+  particleElectric: {fileID: 184250, guid: 57c29d8a3fb2afa42a30c49d3aceccfc, type: 2}
 --- !u!114 &11466314
 MonoBehaviour:
   m_ObjectHideFlags: 1
