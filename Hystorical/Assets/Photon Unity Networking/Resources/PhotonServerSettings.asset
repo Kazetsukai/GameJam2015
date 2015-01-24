@@ -31,4 +31,7 @@ MonoBehaviour:
   - SetRemote
   - ChangeLevel
   - SpawnRock
+  - SpawnBoulder
+  - SpawnPlant
+  - SpawnTree
   DisableAutoOpenWizard: 0
