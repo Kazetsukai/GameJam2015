@@ -22,6 +22,7 @@ ModelImporter:
     100032: shoulderR
     100034: torso
     100036: mesh
+    100038: Icosphere
     400000: Armature
     400002: armLLower
     400004: armLUpper
@@ -41,8 +42,10 @@ ModelImporter:
     400032: shoulderR
     400034: torso
     400036: mesh
+    400038: Icosphere
     4300000: Cube
     4300002: mesh
+    4300004: Icosphere
     7400000: Default Take
     7400002: anim_idle
     7400004: anim_run
@@ -50,6 +53,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: Cube
     13700002: mesh
+    13700004: Icosphere
   materials:
     importMaterials: 1
     materialName: 1

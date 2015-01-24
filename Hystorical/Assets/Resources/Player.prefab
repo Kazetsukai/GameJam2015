@@ -1007,7 +1007,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .219999999, y: 0, z: -.230000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436668}
@@ -1383,7 +1383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   MaxSpeed: 10
-  MaxAccel: 10
+  MaxAccel: 70
+  Remote: 0
   IsPanicked: 0
   PanicDirection: -1
   PanicTimer: 0
@@ -1391,7 +1392,6 @@ MonoBehaviour:
   NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
-  Remote: 0
 --- !u!114 &11455466
 MonoBehaviour:
   m_ObjectHideFlags: 1

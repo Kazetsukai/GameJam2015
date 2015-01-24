@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 426886}
   - 95: {fileID: 9526922}
+  - 114: {fileID: 11408002}
+  - 54: {fileID: 5492862}
+  - 65: {fileID: 6592862}
   m_Layer: 0
   m_Name: pf_cow
   m_TagString: LevelObject
@@ -830,7 +833,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06999993, y: .783999979, z: -3.53999996}
+  m_LocalPosition: {x: 4.61999989, y: 1.03999996, z: -3.53999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426888}
@@ -2169,6 +2172,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181232}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5492862
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126886}
+  serializedVersion: 2
+  m_Mass: 26.2299995
+  m_Drag: .899999976
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6581186
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2457,6 +2475,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: -.5, z: 0}
+--- !u!65 &6592862
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.17000008, y: 1.73000002, z: 1}
+  m_Center: {x: .50999999, y: 0, z: 0}
 --- !u!81 &8160578
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2536,6 +2566,23 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11408002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763c31419038985439a7ab3c922233f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  MaxSpeed: 5
+  MaxAccel: 5
+  Remote: 0
+  IsPanicked: 0
+  IdleTimer: 0
 --- !u!114 &11460578
 MonoBehaviour:
   m_ObjectHideFlags: 1
