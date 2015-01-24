@@ -71,6 +71,7 @@ public class Death : MonoBehaviour {
 	public void DieByElectricity()
 	{
 		Instantiate(particleElectric, this.transform.position, new Quaternion());
+		DieSound();
 		Die();
 	}
 	
