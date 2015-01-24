@@ -30,4 +30,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - SetRemote
   - ChangeLevel
+  - SpawnRock
   DisableAutoOpenWizard: 0

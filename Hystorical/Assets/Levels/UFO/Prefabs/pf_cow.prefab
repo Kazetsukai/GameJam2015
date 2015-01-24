@@ -9,6 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 448654}
   - 95: {fileID: 9548690}
+  - 54: {fileID: 5420394}
+  - 65: {fileID: 6576400}
+  - 114: {fileID: 11422148}
+  - 114: {fileID: 11458268}
   m_Layer: 0
   m_Name: pf_cow
   m_TagString: LevelObject
@@ -294,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.06999993, y: .783999979, z: -3.53999996}
+  m_LocalPosition: {x: -.0199999996, y: 1.32000005, z: 5.40999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448656}
@@ -533,6 +537,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 448688}
   m_RootOrder: 0
+--- !u!54 &5420394
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148654}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 50
+  m_AngularDrag: 50
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6576400
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.29999995, y: 1.60000002, z: 1.10000002}
+  m_Center: {x: .550000012, y: .100000001, z: 0}
 --- !u!95 &9548690
 Animator:
   serializedVersion: 3
@@ -542,12 +573,55 @@ Animator:
   m_GameObject: {fileID: 148654}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b2767d1674db71340934e3616eeaac22, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6c69646a1011cb4791fdf0f8d68010c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11422148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763c31419038985439a7ab3c922233f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 5
+  MaxAccel: 10
+  _target: {x: 0, y: 0, z: 0}
+  Remote: 0
+  IsPanicked: 0
+  IdleTimer: 0
+  Goal: {x: 0, y: 0, z: 0}
+--- !u!114 &11458268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  prefixBackup: -1
+  observed: {fileID: 0}
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  isRuntimeInstantiated: 0
 --- !u!137 &13748690
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

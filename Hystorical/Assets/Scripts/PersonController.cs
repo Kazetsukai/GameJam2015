@@ -16,6 +16,7 @@ public class PersonController : MovementController {
     
     protected override void SetupTarget() 
 	{
+		Debug.Log("SetupTarget " + gameObject.name);
 		if (IsPanicked) 
 		{
 			PanicTimer--;

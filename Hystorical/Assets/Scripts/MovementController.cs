@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : Photon.MonoBehaviour {
 
-	public Animator _animator;
+	private Animator _animator;
 	
 	public float MaxSpeed;
 	public float MaxAccel;
 	
-	protected Vector3 _target = Vector3.zero;
+	public Vector3 _target = Vector3.zero;
 	
 	public bool Remote = false;
 
@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour {
 	
 	void FixedUpdate()
 	{
-        if (!Remote)
+        if (photonView.isMine || !PhotonNetwork.connected)
 		    SetupTarget();
 
 		Move();
@@ -37,6 +37,8 @@ public class MovementController : MonoBehaviour {
 	
 	private void Move()
 	{
+		Debug.Log("Move " + gameObject.name);
+		
 		Vector3 targetNormalised = Vector3.ClampMagnitude(_target, 1) * MaxSpeed;
 		
 		var diff = targetNormalised - rigidbody.velocity;
