@@ -22,5 +22,6 @@ public class Lava : MonoBehaviour {
 		{
 			killer.DieByFire();
 		}
+		Debug.Log("d");
 	}
 }

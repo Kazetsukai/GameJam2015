@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 493032}
   - 33: {fileID: 3393032}
   - 23: {fileID: 2393032}
-  - 64: {fileID: 6493032}
   - 95: {fileID: 9593032}
+  - 136: {fileID: 13688724}
   m_Layer: 0
   m_Name: pf_plant
   m_TagString: LevelObject
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193032}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 72.612793, y: 3.06564665, z: -39.3418884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,19 +58,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193032}
   m_Mesh: {fileID: 4300000, guid: cd1dcf5cd9dbb86479031165e04068d9, type: 3}
---- !u!64 &6493032
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: cd1dcf5cd9dbb86479031165e04068d9, type: 3}
 --- !u!95 &9593032
 Animator:
   serializedVersion: 3
@@ -86,6 +73,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &13688724
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .209999993
+  m_Height: .540000021
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: .150000006}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
