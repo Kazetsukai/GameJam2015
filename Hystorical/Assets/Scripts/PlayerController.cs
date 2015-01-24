@@ -16,8 +16,12 @@ public class PlayerController : MonoBehaviour {
 	
 	public float NPCFollowFactor = 1f;
 	public Vector3 NPCGoal = Vector3.zero;
-	public int NPCIntelligence = 0;	
-	private int NPCChangeMind = 0;
+	public int NPCIntelligence = 0;
+    private int NPCChangeMind = 0;
+
+    Vector3 _target = Vector3.zero;
+
+    public bool Remote = false;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +31,6 @@ public class PlayerController : MonoBehaviour {
     
     void FixedUpdate()
     {
-		Vector3 target = Vector3.zero;
 		if (IsPanicked) 
 		{
 			//Vector3.RotateTowards(rigidbody.velocity, PanicDirection,
@@ -38,7 +41,7 @@ public class PlayerController : MonoBehaviour {
             var horiz = Input.GetAxis("Horizontal");
             var vert = Input.GetAxis("Vertical");
 
-            target = new Vector3(horiz, 0, vert);
+            _target = new Vector3(horiz, 0, vert);
         }
         else
         {
@@ -48,15 +51,19 @@ public class PlayerController : MonoBehaviour {
 			}
 			
 			NPCChangeMind--;
-        	
-			var goal = GameObject.Find("WorldCenterMarker").transform.position + NPCGoal;
-        	var self = rigidbody.transform.position;
-			var posDiff = goal - self;
-			
-			target = (Quaternion.AngleAxis(Random.value * 360, Vector3.up) * Vector3.right) + (posDiff * NPCFollowFactor);
+
+            var centerMarker = GameObject.Find("WorldCenterMarker");
+            if (centerMarker != null)
+            {
+                var goal = centerMarker.transform.position + NPCGoal;
+                var self = rigidbody.transform.position;
+                var posDiff = goal - self;
+
+                _target = (Quaternion.AngleAxis(Random.value * 360, Vector3.up) * Vector3.right) + (posDiff * NPCFollowFactor);
+            }
 		}
-		
-		Vector3 targetNormalised = Vector3.ClampMagnitude(target, 1) * MaxSpeed;
+
+        Vector3 targetNormalised = Vector3.ClampMagnitude(_target, 1) * MaxSpeed;
 		
 		var diff = targetNormalised - rigidbody.velocity;
 		var velocityChange = diff;
@@ -73,6 +80,20 @@ public class PlayerController : MonoBehaviour {
         if (dir.magnitude > 0.01)
             transform.localRotation = Quaternion.LookRotation(dir);
 
-		_animator.SetFloat("speed", target.magnitude);
+        _animator.SetFloat("speed", _target.magnitude);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        Vector3 pos = transform.localPosition;
+        stream.Serialize(ref pos);
+        stream.Serialize(ref _target);
+        transform.localPosition = pos;
+    }
+
+    [RPC]
+    void SetRemote()
+    {
+        Remote = true;
     }
 }
