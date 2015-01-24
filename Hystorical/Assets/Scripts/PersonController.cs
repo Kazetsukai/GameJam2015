@@ -1,12 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PersonController : MovementController {
 	
-	public Animator _animator;
-	
-    public float MaxSpeed = 5;
-	public float MaxAccel = 10;
 	
 	public bool IsPanicked = false;
 	public int PanicDirection = -1;
@@ -18,18 +14,9 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 NPCGoal = Vector3.zero;
 	public int NPCIntelligence = 0;
     private int NPCChangeMind = 0;
-
-    Vector3 _target = Vector3.zero;
-
-    public bool Remote = false;
-
-	// Use this for initialization
-	void Start () {
-        _animator = GetComponentInChildren<Animator>();
-    }
     
-    void FixedUpdate()
-    {
+    protected override void SetupTarget() 
+	{
 		if (IsPanicked) 
 		{
 			PanicTimer--;
@@ -65,38 +52,5 @@ public class PlayerController : MonoBehaviour {
                 _target = (Quaternion.AngleAxis(Random.value * 360, Vector3.up) * Vector3.right) + (posDiff * NPCFollowFactor);
             }
 		}
-
-        Vector3 targetNormalised = Vector3.ClampMagnitude(_target, 1) * MaxSpeed;
-		
-		var diff = targetNormalised - rigidbody.velocity;
-		var velocityChange = diff;
-		var maxAccelThisFrame = MaxAccel * Time.fixedDeltaTime;
-		
-		if (velocityChange.magnitude > maxAccelThisFrame)
-		{
-			velocityChange = velocityChange.normalized * maxAccelThisFrame;
-		}
-		
-		rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
-
-        var dir = rigidbody.velocity.normalized;
-        if (dir.magnitude > 0.01)
-            transform.localRotation = Quaternion.LookRotation(dir);
-
-        _animator.SetFloat("speed", _target.magnitude);
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        Vector3 pos = transform.localPosition;
-        stream.Serialize(ref pos);
-        stream.Serialize(ref _target);
-        transform.localPosition = pos;
-    }
-
-    [RPC]
-    void SetRemote()
-    {
-        Remote = true;
-    }
+	}
 }

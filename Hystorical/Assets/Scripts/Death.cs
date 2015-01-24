@@ -59,7 +59,7 @@ public class Death : MonoBehaviour {
 			DieTimer = Random.Range(minLifeS*50, maxLifeS*50);
 		}
 		
-		var controller = GetComponent<PlayerController>();
+		var controller = GetComponent<PersonController>();
 		if (controller != null) 
 		{
 			controller.IsPanicked = true;
