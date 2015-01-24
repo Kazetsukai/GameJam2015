@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 211487517}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 212376950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legRLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 226457784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 229683492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armRLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 310037856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406691093}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458935370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - 33: {fileID: 460167260}
   - 65: {fileID: 460167259}
   - 23: {fileID: 460167258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 544388536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 712502928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armRUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 713988677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armLUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 743241189}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 778441512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 810352956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 816951457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 831299915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1131,7 @@ GameObject:
   - 4: {fileID: 960313330}
   - 198: {fileID: 960313332}
   - 199: {fileID: 960313331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2229,7 +2229,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 967457069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legLThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2261,7 @@ GameObject:
   - 54: {fileID: 969602021}
   - 114: {fileID: 969602020}
   - 114: {fileID: 969602019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Living
   m_Icon: {fileID: 0}
@@ -2309,12 +2309,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   MaxSpeed: 10
-  MaxAccel: 70
+  MaxAccel: 10
   IsPanicked: 0
   PanicDirection: {x: 0, y: 0, z: 0}
   PanicTimer: 0
   Player: 1
-  NPCFollowFactor: 0
+  NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
 --- !u!54 &969602021
@@ -2356,7 +2356,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1032703723}
   - 137: {fileID: 1032703724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2445,7 +2445,7 @@ GameObject:
   - 54: {fileID: 1035264562}
   - 114: {fileID: 1035264561}
   - 114: {fileID: 1035264564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NPC
   m_TagString: Living
   m_Icon: {fileID: 0}
@@ -2480,12 +2480,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
   MaxSpeed: 10
-  MaxAccel: 70
+  MaxAccel: 10
   IsPanicked: 0
   PanicDirection: {x: 0, y: 0, z: 0}
   PanicTimer: 0
   Player: 0
-  NPCFollowFactor: 0
+  NPCFollowFactor: 1
   NPCGoal: {x: 0, y: 0, z: 0}
   NPCIntelligence: 0
 --- !u!54 &1035264562
@@ -2701,7 +2701,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1132055690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2730,7 +2730,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1179448138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shoulderR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2759,7 +2759,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1189949840}
   - 137: {fileID: 1189949841}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2844,7 +2844,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1208556353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1209901343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legRThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3050,6 +3050,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1365491548}
   - 95: {fileID: 1365491549}
+  - 114: {fileID: 1365491552}
+  - 54: {fileID: 1365491551}
+  - 65: {fileID: 1365491550}
   m_Layer: 8
   m_Name: pf_lavaFlowAnimated
   m_TagString: Untagged
@@ -3087,6 +3090,47 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!65 &1365491550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6546728, guid: 56fc3c830b4018f42a3b3adb9d75967b,
+    type: 2}
+  m_PrefabInternal: {fileID: 829546856}
+  m_GameObject: {fileID: 1365491547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.5799999, y: 15.46, z: 50.6300011}
+  m_Center: {x: -3.0999999, y: 0, z: 0}
+--- !u!54 &1365491551
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5464140, guid: 56fc3c830b4018f42a3b3adb9d75967b,
+    type: 2}
+  m_PrefabInternal: {fileID: 829546856}
+  m_GameObject: {fileID: 1365491547}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1365491552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11403792, guid: 56fc3c830b4018f42a3b3adb9d75967b,
+    type: 2}
+  m_PrefabInternal: {fileID: 829546856}
+  m_GameObject: {fileID: 1365491547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2ac42735c0ccb4aada237d80fbe0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389537978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,7 +3139,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1389537979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3261,6 +3305,26 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 138882, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 138884, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 138878, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 138880, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 138886, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edf63f5d2e6fd3448b9a18ff2ed52c2e, type: 2}
   m_RootGameObject: {fileID: 1684873105}
@@ -3277,7 +3341,7 @@ GameObject:
   - 33: {fileID: 1610826199}
   - 65: {fileID: 1610826198}
   - 23: {fileID: 1610826197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3346,7 +3410,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1652393041}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legRLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3373,7 +3437,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1665451779}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armLUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3401,7 +3465,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1684873106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pf_LevelBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,7 +3496,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1705538425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3465,8 +3529,7 @@ GameObject:
   - 33: {fileID: 1774656639}
   - 65: {fileID: 1774656638}
   - 23: {fileID: 1774656637}
-  - 114: {fileID: 1774656641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3527,17 +3590,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1684873106}
   m_RootOrder: 3
---- !u!114 &1774656641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774656636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8c9f61cad90c4469897bd116b17ea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1821996760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,7 +3639,7 @@ MonoBehaviour:
   boulderPrefab: {fileID: 135084, guid: f45de7177880b9d43a5eb8c609fb4f6e, type: 2}
   treePrefab: {fileID: 187488, guid: 6f2b27a5ad6921040ba101f97b342cb8, type: 2}
   plantPrefab: {fileID: 193032, guid: 558bf73c96c9645458975757dc5ab23e, type: 2}
-  rockPrefab: {fileID: 159942, guid: 8505ccdd96eece241832de49dec68b6b, type: 2}
+  rockPrefab: {fileID: 131190, guid: 8505ccdd96eece241832de49dec68b6b, type: 2}
   levelWidth: 17
   boulderSpawnRate: 1
   treeSpawnRate: 1
@@ -3683,7 +3735,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1857418002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armLLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3776,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898612936}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 8c12522d208060e469cb313aafbcb048, type: 3}
   m_PlayOnAwake: 1
@@ -3798,7 +3850,7 @@ GameObject:
   - 4: {fileID: 1903207308}
   - 198: {fileID: 1903207310}
   - 199: {fileID: 1903207309}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4896,7 +4948,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1913686238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legLLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4975,7 +5027,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1961202653}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armRLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,7 +5054,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1974018698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armLLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5030,7 +5082,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1985105524}
   - 95: {fileID: 1985105525}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: person_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5075,7 +5127,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2017884276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: armRUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5103,7 +5155,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2036244406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: legLLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5232,7 +5284,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2051877988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5260,7 +5312,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2071774268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5381,7 +5433,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2129680200}
   - 95: {fileID: 2129680201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: person_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5429,7 +5481,7 @@ GameObject:
   - 33: {fileID: 2133857251}
   - 65: {fileID: 2133857250}
   - 23: {fileID: 2133857249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
