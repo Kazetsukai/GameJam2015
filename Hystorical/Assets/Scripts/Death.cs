@@ -41,8 +41,17 @@ public class Death : MonoBehaviour {
 		}
 	}
 	
+	public void DieSound()
+	{
+		var deathsound = GetComponent<AudioSource>();
+		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
+		deathsound.Play();
+	}
+	
 	public void DieByFire()
 	{
+		DieSound();
+		
 		var fireEmitter = transform.FindChild("Fire");
 		if (fireEmitter != null) 
 		{
@@ -58,11 +67,7 @@ public class Death : MonoBehaviour {
 	}
 	
 	public void Die()
-	{
-		var deathsound = GetComponent<AudioSource>();
-		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
-		deathsound.Play();
-		
+	{		
 		GetComponent<CapsuleCollider>().enabled = false;
 		
 		rigidbody.useGravity = false;

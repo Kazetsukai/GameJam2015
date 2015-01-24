@@ -619,7 +619,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100066}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: .0930000022, z: -0}
+  m_LocalPosition: {x: 0, y: .660000026, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 436654}
@@ -838,7 +838,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.110000014, z: 0}
+  m_LocalPosition: {x: 0, y: .660000026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436642}
@@ -1007,7 +1007,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .800000012, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436668}
@@ -1098,7 +1098,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.109999999, z: 0}
+  m_LocalPosition: {x: 0, y: .660000026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417078}
@@ -1404,6 +1404,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
+  DeathSounds:
+  - {fileID: 8300000, guid: 03dd50931c94f1b498f3dce4a1e24435, type: 3}
+  - {fileID: 8300000, guid: d848115d9468a664ca32f4b5a669f8ab, type: 3}
+  - {fileID: 8300000, guid: c14b30080fd47654ea487f3365b42a16, type: 3}
+  - {fileID: 8300000, guid: 1a1dd723fd53793458a2ecd752c767b4, type: 3}
+  - {fileID: 8300000, guid: 0f118a6f253708a4089dc35e04a5ef86, type: 3}
   Ragdoll: {fileID: 117080}
   CharacterAvatarObject: {fileID: 136668}
 --- !u!114 &11466314
@@ -1559,7 +1565,7 @@ CapsuleCollider:
   m_Radius: .300000012
   m_Height: 1.79999995
   m_Direction: 1
-  m_Center: {x: 0, y: .150000006, z: 0}
+  m_Center: {x: 0, y: .949999988, z: 0}
 --- !u!137 &13717048
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
