@@ -24,6 +24,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
     public virtual void Start()
     {
         PhotonNetwork.autoJoinLobby = false;    // we join randomly. always. no need to join a lobby to get the list of rooms.
+        PhotonNetwork.automaticallySyncScene = true;
         DontDestroyOnLoad(this);
     }
 
@@ -39,7 +40,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
         if (Application.loadedLevel == 0)
         {
-            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom && PhotonNetwork.playerList.Length > 2)
+            if (PhotonNetwork.isMasterClient && PhotonNetwork.inRoom && PhotonNetwork.playerList.Length > 1)
             {
                 _countingDown = true;
             }
@@ -86,7 +87,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
         Debug.Log("Woop woop");
 
         var player = PhotonNetwork.Instantiate(PlayerObject.name, Vector3.zero, Quaternion.identity, 0);
-        player.GetComponent<PlayerController>().Player = true;
+        player.GetComponent<PersonController>().Player = true;
         player.GetPhotonView().RPC("SetRemote", PhotonTargets.OthersBuffered, null);
         
     }
@@ -94,5 +95,12 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
     public void OnJoinedLobby()
     {
         //Debug.Log("OnJoinedLobby(). Use a GUI to show existing rooms available in PhotonNetwork.GetRoomList().");
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+        var player = PhotonNetwork.Instantiate(PlayerObject.name, Vector3.zero, Quaternion.identity, 0);
+		player.GetComponent<PersonController>().Player = true;
+        player.GetPhotonView().RPC("SetRemote", PhotonTargets.OthersBuffered, null);
     }
 }

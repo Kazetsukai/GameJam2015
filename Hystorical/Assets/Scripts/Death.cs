@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Death : MonoBehaviour {
 
-	public int DieTimer = -1;
+	public float DieTimer = -1;
 	
 	public AudioClip[] DeathSounds;
 	
@@ -29,7 +29,7 @@ public class Death : MonoBehaviour {
         
 		if (Input.GetKeyDown(KeyCode.KeypadEnter))
 		{
-			Die ();
+			DieByFire(3,5);
 		}
         
         if (DieTimer >= 0) 
@@ -43,16 +43,25 @@ public class Death : MonoBehaviour {
 		}
 	}
 	
-	public void DieByFire()
+	public void DieSound()
 	{
+		var deathsound = GetComponent<AudioSource>();
+		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
+		deathsound.Play();
+	}
+	
+	public void DieByFire(int minLifeS, int maxLifeS)
+	{
+		DieSound();
+		
 		var fireEmitter = transform.FindChild("Fire");
 		if (fireEmitter != null) 
 		{
-			fireEmitter.gameObject.SetActive(true);
-			DieTimer = Random.Range(60, 150);
+			fireEmitter.gameObject.SetActive(true);			
+			DieTimer = Random.Range(minLifeS*50, maxLifeS*50);
 		}
 		
-		var controller = GetComponent<PlayerController>();
+		var controller = GetComponent<PersonController>();
 		if (controller != null) 
 		{
 			controller.IsPanicked = true;
@@ -66,14 +75,7 @@ public class Death : MonoBehaviour {
 	}
 	
 	public void Die()
-	{
-		var deathsound = GetComponent<AudioSource>();
-
-		if (DeathSounds.Length > 0)
-		{
-			deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
-			deathsound.Play();
-		}
+	{		
 
 		GetComponent<CapsuleCollider>().enabled = false;
 		
@@ -85,6 +87,12 @@ public class Death : MonoBehaviour {
 		
 		// Set all bones to same position as animated character
 		CopyPosition(CharacterAvatarObject.transform, Ragdoll.transform);
+		
+		var fireEmitter = transform.FindChild("Fire");
+		if (fireEmitter != null) 
+		{
+			fireEmitter.SetParent(Ragdoll.transform.FindChild("Armature"));
+		}
 		
 		CharacterAvatarObject.SetActive(false);
 		
