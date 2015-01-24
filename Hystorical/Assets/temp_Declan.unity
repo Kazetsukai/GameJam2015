@@ -81,6 +81,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 436654, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -129,6 +133,26 @@ Prefab:
       propertyPath: Player
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 03dd50931c94f1b498f3dce4a1e24435, type: 3}
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d848115d9468a664ca32f4b5a669f8ab, type: 3}
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c14b30080fd47654ea487f3365b42a16, type: 3}
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a1dd723fd53793458a2ecd752c767b4, type: 3}
+    - target: {fileID: 11455466, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
+      propertyPath: DeathSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f118a6f253708a4089dc35e04a5ef86, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd93cf90675d054e87622afaa37271f, type: 2}
   m_RootGameObject: {fileID: 557850423}
@@ -751,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
+  DeathSounds: []
   Ragdoll: {fileID: 1668030819}
   CharacterAvatarObject: {fileID: 1735068466}
 --- !u!114 &376048160
@@ -2224,6 +2249,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieTimer: -1
+  DeathSounds:
+  - {fileID: 8300000, guid: 03dd50931c94f1b498f3dce4a1e24435, type: 3}
+  - {fileID: 8300000, guid: d848115d9468a664ca32f4b5a669f8ab, type: 3}
+  - {fileID: 8300000, guid: c14b30080fd47654ea487f3365b42a16, type: 3}
+  - {fileID: 8300000, guid: 1a1dd723fd53793458a2ecd752c767b4, type: 3}
+  - {fileID: 8300000, guid: 0f118a6f253708a4089dc35e04a5ef86, type: 3}
   Ragdoll: {fileID: 2014299931}
   CharacterAvatarObject: {fileID: 1883173008}
 --- !u!114 &557850426
