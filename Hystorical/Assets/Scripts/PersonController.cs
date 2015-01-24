@@ -53,4 +53,11 @@ public class PersonController : MovementController {
             }
 		}
 	}
+
+    [RPC]
+    void SetRemote()
+    {
+        Remote = true;
+        Debug.Log("Set player to remote player");
+    }
 }

@@ -89,7 +89,6 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
         var player = PhotonNetwork.Instantiate(PlayerObject.name, Vector3.zero, Quaternion.identity, 0);
         player.GetComponent<PersonController>().Player = true;
         player.GetPhotonView().RPC("SetRemote", PhotonTargets.OthersBuffered, null);
-        
     }
 
     public void OnJoinedLobby()

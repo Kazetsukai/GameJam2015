@@ -18,13 +18,15 @@ public class MovementController : MonoBehaviour {
 	
 	void FixedUpdate()
 	{
-		SetupTarget();
+        if (!Remote)
+		    SetupTarget();
+
 		Move();
 	}
 	
 	protected virtual void SetupTarget()
 	{
-	
+	    
 	}
 	
 	private void Move()
@@ -61,5 +63,6 @@ public class MovementController : MonoBehaviour {
 	void SetRemote()
 	{
 		Remote = true;
+        Debug.Log("Set player to remote player");
 	}
 }

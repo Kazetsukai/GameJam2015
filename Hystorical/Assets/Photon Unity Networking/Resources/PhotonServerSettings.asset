@@ -29,4 +29,5 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - SetRemote
+  - ChangeLevel
   DisableAutoOpenWizard: 0
