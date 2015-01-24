@@ -46,5 +46,10 @@ public class LevelSpawner : Photon.MonoBehaviour {
             level.transform.SetParent(LevelContainer.transform);
         }
 
+        // Move players to 0
+        foreach (var player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            player.transform.position = Vector3.zero;
+        }
     }
 }
