@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
     {
 		if (IsPanicked) 
 		{
-			target = Quaternion.AngleAxis(PanicAngle, Vector3.up) * Vector3.right;
+			_target = Quaternion.AngleAxis(PanicAngle, Vector3.up) * Vector3.right;
 			
 			if (PanicTimer < 0) 
 			{
