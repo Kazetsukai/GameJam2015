@@ -6,9 +6,7 @@ public class LevelVolcano : MonoBehaviour {
 
 	public GameObject worldCenterObject;
 	private GameObject LevelObjectsParent;
-	public GameObject objectDespawnerPrefab;
 
-	public GameObject lavaPrefab;
 	public GameObject floorPrefab;
 	public GameObject boulderPrefab;
 	public GameObject treePrefab;
@@ -29,15 +27,17 @@ public class LevelVolcano : MonoBehaviour {
 	public float plantSpawnTimer = 0f;
 	public float rockSpawnTimer = 0f;
 
-	public float spawnDistance = 40f; //distance objects spawn from worldCenterObject
+	public float spawnDistance = 60f; //distance objects spawn from worldCenterObject
 
 	public int numSpawned = 0;
 
-	GameObject lava;
-	Vector3 lavaOffset;
-
-	GameObject objectDespawner;
 	float objectDespawnerDistance = 80f;
+
+	public GameObject lava;
+	float lavaDistance = 21f;
+
+	public GameObject LevelBounds;
+	public GameObject ObjectDespawner;
 
 	// Use this for initialization
 	void Start () 
@@ -45,22 +45,15 @@ public class LevelVolcano : MonoBehaviour {
 		//spawn lava thing
 		LevelObjectsParent = new GameObject ("LevelObjects");
 		LevelObjectsParent.transform.parent = this.transform;
-
-		objectDespawner = (GameObject)Instantiate (objectDespawnerPrefab);
-
-
-		lava = (GameObject)Instantiate (lavaPrefab);
-		lava.transform.position = new Vector3 (-21.38f, 0.34f, -4.11f);
-		lavaOffset = worldCenterObject.transform.position - lava.transform.position;
-		lava.transform.parent = LevelObjectsParent.transform;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{	
 		//Update positions
-		objectDespawner.transform.position = worldCenterObject.transform.position - new Vector3(objectDespawnerDistance, 0 , 0);
-		lava.transform.position = worldCenterObject.transform.position - lavaOffset;
+		ObjectDespawner.transform.position = worldCenterObject.transform.position - new Vector3(objectDespawnerDistance, 0 , 0);
+		lava.transform.position = new Vector3(worldCenterObject.transform.position.x - lavaDistance, lava.transform.position.y , lava.transform.position.z);
+		LevelBounds.transform.position = new Vector3(worldCenterObject.transform.position.x, LevelBounds.transform.position.y, LevelBounds.transform.position.z);
 
 		//update timers
 		boulderSpawnTimer += Time.fixedDeltaTime * boulderSpawnRate;
@@ -69,7 +62,7 @@ public class LevelVolcano : MonoBehaviour {
 		rockSpawnTimer += Time.fixedDeltaTime * rockSpawnRate;
 
 		//Spawn floor objects as worldCenterObject moves
-		int numToSpawn = (int)(worldCenterObject.transform.position.x / 32f) + 5;
+		int numToSpawn = ((int)(worldCenterObject.transform.position.x / 32f)-1) + 5; //-1, so that we have one in place in scene view
 		for (int i = numSpawned; i < numToSpawn; i++) 
 		{
 			GameObject newFloor = (GameObject)Instantiate (floorPrefab);
