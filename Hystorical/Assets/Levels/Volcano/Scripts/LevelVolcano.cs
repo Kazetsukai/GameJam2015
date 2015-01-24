@@ -80,11 +80,11 @@ public class LevelVolcano : Photon.MonoBehaviour {
 			//Spawn everything else
 			if (boulderSpawnTimer >= spawnTime)
 			{
-				GameObject newBoulder = (GameObject)Instantiate(boulderPrefab);
-				newBoulder.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
-				newBoulder.transform.localEulerAngles = new Vector3(newBoulder.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newBoulder.transform.localEulerAngles.z);
-				newBoulder.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
-				newBoulder.transform.parent = LevelObjectsParent.transform;
+				var pos = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
+				var rotation = new Vector3(0, Random.Range(0, Mathf.PI * 2), 0);
+				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
+				
+				photonView.RPC ("SpawnBoulder", PhotonTargets.All, pos, rotation, scale);
 
 				//reset spawnTimer
 				boulderSpawnTimer = 0;
@@ -92,22 +92,22 @@ public class LevelVolcano : Photon.MonoBehaviour {
 
 			if (plantSpawnTimer >= spawnTime)
 			{
-				GameObject newPlant = (GameObject)Instantiate(plantPrefab);
-				newPlant.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
-				newPlant.transform.localEulerAngles = new Vector3(newPlant.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newPlant.transform.localEulerAngles.z);
-	            newPlant.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
-				newPlant.transform.parent = LevelObjectsParent.transform;
+				var pos = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
+				var rotation = new Vector3(0, Random.Range(0, Mathf.PI * 2), 0);
+				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
+				
+				photonView.RPC ("SpawnPlant", PhotonTargets.All, pos, rotation, scale);
 
 				//reset spawnTimer
 				plantSpawnTimer = 0;
 			}
 			if (treeSpawnTimer >= spawnTime)
 			{
-				GameObject newTree = (GameObject)Instantiate(treePrefab);
-				newTree.transform.position = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
-				newTree.transform.localEulerAngles = new Vector3(newTree.transform.localEulerAngles.x, Random.Range(0, Mathf.PI * 2), newTree.transform.localEulerAngles.z);
-				newTree.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
-				newTree.transform.parent = LevelObjectsParent.transform;
+				var pos = new Vector3(worldCenterObject.transform.position.x + spawnDistance,0, Random.Range(-(float)levelWidth, (float)levelWidth));
+				var rotation = new Vector3(0, Random.Range(0, Mathf.PI * 2), 0);
+				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
+
+				photonView.RPC ("SpawnTree", PhotonTargets.All, pos, rotation, scale);
 
 				//reset spawnTimer
 				treeSpawnTimer = 0;
@@ -117,8 +117,9 @@ public class LevelVolcano : Photon.MonoBehaviour {
 			{
 				var pos = worldCenterObject.transform.position + new Vector3(Random.Range (-20f, 20f),30, Random.Range(-levelWidth / 2, levelWidth / 2));
 				var rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
+				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 
-				photonView.RPC ("SpawnRock", PhotonTargets.All, pos, rotation);
+				photonView.RPC ("SpawnRock", PhotonTargets.All, pos, rotation, scale);
 
 				//reset spawnTimer
 				rockSpawnTimer = 0;
@@ -127,10 +128,40 @@ public class LevelVolcano : Photon.MonoBehaviour {
 	}
 
 	[RPC]
-	public void SpawnRock(Vector3 pos, Quaternion rotation)
+	public void SpawnBoulder(Vector3 pos, Vector3 rotation, Vector3 scale)
+	{
+		GameObject newBoulder = (GameObject)Instantiate(plantPrefab);
+		newBoulder.transform.position = pos;
+		newBoulder.transform.localEulerAngles += rotation;
+		newBoulder.transform.localScale = scale;
+		newBoulder.transform.parent = LevelObjectsParent.transform;
+	}
+
+	[RPC]
+	public void SpawnPlant(Vector3 pos, Vector3 rotation, Vector3 scale)
+	{
+		GameObject newPlant = (GameObject)Instantiate(plantPrefab);
+		newPlant.transform.position = pos;
+		newPlant.transform.localEulerAngles += rotation;
+		newPlant.transform.localScale = scale;
+		newPlant.transform.parent = LevelObjectsParent.transform;
+	}
+
+	[RPC]
+	public void SpawnTree(Vector3 pos, Vector3 rotation, Vector3 scale)
+	{
+		GameObject newTree = (GameObject)Instantiate(treePrefab);
+		newTree.transform.position = pos;
+		newTree.transform.localEulerAngles += rotation;
+		newTree.transform.localScale = scale;
+		newTree.transform.parent = LevelObjectsParent.transform;
+	}
+
+	[RPC]
+	public void SpawnRock(Vector3 pos, Quaternion rotation, Vector3 scale)
 	{
 		GameObject newRock = (GameObject)Instantiate(rockPrefab, pos, rotation);
-		newRock.transform.localScale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
+		newRock.transform.localScale = scale;
 		newRock.transform.parent = LevelObjectsParent.transform;
 	}
 }
