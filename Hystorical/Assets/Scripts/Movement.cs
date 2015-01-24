@@ -1,18 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Movement : MonoBehaviour {
-
+	
+	public Animator _animator;
+	
     public float MaxSpeed = 5;
 	public float MaxAccel = 10;
 	public float AnimationScale = 1;
 	public bool Player = false;
-	public Vector3 target = Vector3.zero;
 	public float NPCFollowFactor = 1f;
 	public Vector3 NPCGoal = Vector3.zero;
-	public int NPCChangeMind = 0;
+	public int NPCIntelligence = 0;
 	
-    public Animator _animator;
+	private int NPCChangeMind = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class Movement : MonoBehaviour {
 
     void FixedUpdate()
     {
-		
+		Vector3 target = Vector3.zero;
         if (Player)
         {
             var horiz = Input.GetAxis("Horizontal");
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour {
         else
         {
         	if (NPCChangeMind <= 0) {
-        		NPCGoal = new Vector3(Random.Range(-15f, 15f),0,Random.Range(-15f,15f));
+				NPCGoal = new Vector3(Random.Range(-15f + 20f * NPCIntelligence, 15f),0,Random.Range(-15f,15f));
         		NPCChangeMind = Random.Range(40,400);
 			}
 			
