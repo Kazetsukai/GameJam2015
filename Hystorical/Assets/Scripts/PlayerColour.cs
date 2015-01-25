@@ -31,6 +31,9 @@ public class PlayerColour : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        if (!photonView.isMine)
+            GetComponentInChildren<Light>().enabled = false;
+
         Color color;
 	    if (!NPC && PhotonNetwork.connected)
         {
