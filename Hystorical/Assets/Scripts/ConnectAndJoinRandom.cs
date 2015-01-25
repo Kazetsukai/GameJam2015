@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Linq;
 
 /// <summary>
 /// This script automatically connects to Photon (using the settings file), 
@@ -26,11 +27,16 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
     public virtual void Start()
     {
+		if (GameObject.FindObjectsOfType<GameObject>().Where(g => g.name == "NetworkMaster").Count () > 1)
+		{
+			Destroy (this);
+		}
+
 		guiMessage = GameObject.FindWithTag("gui").GetComponent<Text>();
 
         PhotonNetwork.autoJoinLobby = false;    // we join randomly. always. no need to join a lobby to get the list of rooms.
         PhotonNetwork.automaticallySyncScene = true;
-        DontDestroyOnLoad(this);
+		DontDestroyOnLoad(this);
 	}
 
     public virtual void Update()
@@ -65,7 +71,7 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
             if (_countDown < 0)
             {
                 PhotonNetwork.LoadLevel("Main");
-				_countDown = 5;
+				_countDown = 5f;
 				_countingDown = false;
             }
         }
