@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
@@ -21,12 +22,16 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
 
     public GameObject PlayerObject;
 
+	Text guiMessage;
+
     public virtual void Start()
     {
+		guiMessage = GameObject.FindWithTag("gui").GetComponent<Text>();
+
         PhotonNetwork.autoJoinLobby = false;    // we join randomly. always. no need to join a lobby to get the list of rooms.
         PhotonNetwork.automaticallySyncScene = true;
         DontDestroyOnLoad(this);
-    }
+	}
 
     public virtual void Update()
     {
@@ -53,6 +58,8 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
             {
                 Debug.Log(_countDown + " seconds left");
                 _countDown -= Time.deltaTime;
+
+				guiMessage.text = "Game starting in " + (int)(_countDown) + " seconds...";
             }
 
             if (_countDown < 0)
