@@ -19,7 +19,7 @@ public class RockCollisionSoundHandler : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			audio.clip = collisionSounds[3];
+			audio.clip = collisionSounds[2];
 			audio.pitch = Random.Range(0.7f, 1.3f);
 			audio.Play();
 		}
