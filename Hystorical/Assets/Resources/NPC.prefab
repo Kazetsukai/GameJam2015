@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11461404}
   - 114: {fileID: 11461408}
   - 82: {fileID: 8261408}
+  - 114: {fileID: 11461686}
   m_Layer: 10
   m_Name: NPC
   m_TagString: Untagged
@@ -1404,6 +1405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 10
   MaxAccel: 5
+  LookForwards: 0
   _target: {x: 0, y: 0, z: 0}
   Remote: 0
   IsPanicked: 0
@@ -1438,6 +1440,18 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!114 &11461686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fd17dc49b7d6541b6dda0ac8b13d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC: 0
 --- !u!135 &13561408
 SphereCollider:
   m_ObjectHideFlags: 1

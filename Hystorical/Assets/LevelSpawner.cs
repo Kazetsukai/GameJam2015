@@ -24,7 +24,7 @@ public class LevelSpawner : Photon.MonoBehaviour {
         {
             if (_levelTimer >= TimeBetweenLevels)
             {
-                var level = Levels[Random.Range(0, Levels.Length - 1)];
+                var level = Levels[Random.Range(0, Levels.Length)];
 
                 photonView.RPC("ChangeLevel", PhotonTargets.All, level);
 
