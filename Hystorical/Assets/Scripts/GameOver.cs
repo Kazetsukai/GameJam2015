@@ -23,7 +23,8 @@ public class GameOver : MonoBehaviour {
 
 		if ((playerCount <= 0) && (!gameover))
 		{
-			try{
+			try
+			{
 				GameObject muzak = GameObject.Find("Muzak");
 				muzak.GetComponent<AudioSource>().Stop();	
 			}

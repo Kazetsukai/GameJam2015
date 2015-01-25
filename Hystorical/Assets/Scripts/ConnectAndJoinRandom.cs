@@ -65,6 +65,8 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
             if (_countDown < 0)
             {
                 PhotonNetwork.LoadLevel("Main");
+				_countDown = 5;
+				_countingDown = false;
             }
         }
     }
@@ -95,7 +97,6 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
     {
         //Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room. From here on, your game would be running. For reference, all callbacks are listed in enum: PhotonNetworkingMessage");
 
-        Debug.Log("Woop woop");
 
         var player = PhotonNetwork.Instantiate(PlayerObject.name, Vector3.zero, Quaternion.identity, 0);
         player.GetComponent<PersonController>().Player = true;
