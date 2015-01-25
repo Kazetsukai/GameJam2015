@@ -6,7 +6,8 @@ public class LevelUFO : MonoBehaviour {
 	
 	public GameObject worldCenterObject;
 
-	public GameObject cowPrefab;
+    public GameObject cowPrefab;
+    public GameObject ufoPrefab;
 	public float spawnDistance = 60f; //distance cows spawn from worldCenterObject
 	
 	
@@ -24,6 +25,18 @@ public class LevelUFO : MonoBehaviour {
                     position.y = 0;
 
                     var npc = PhotonNetwork.Instantiate(cowPrefab.name, position, Quaternion.identity, 0);
+                }
+            }
+
+            if (ufoPrefab != null)
+            {
+                // Spawn NPCs
+                for (int i = 0; i < 1; i++)
+                {
+                    var position = Random.insideUnitSphere * spawnDistance + worldCenterObject.transform.position;
+                    position.y = 0;
+
+                    var npc = PhotonNetwork.Instantiate(ufoPrefab.name, position, Quaternion.identity, 0);
                 }
             }
         }

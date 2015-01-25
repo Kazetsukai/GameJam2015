@@ -12,15 +12,16 @@ public class UFOController : MovementController {
 	
 	protected override void Init()
 	{
-		var allObj = GameObject.FindObjectsOfType<GameObject>();
-		
-		targets = allObj.Where(o=>o.layer == LayerMask.NameToLayer("Bounded"));
 		
 		LookForwards = false;
 	}
 	
 	protected override void DoLogic()
-	{
+    {
+        var allObj = GameObject.FindObjectsOfType<GameObject>();
+
+        targets = allObj.Where(o => o.layer == LayerMask.NameToLayer("Bounded"));
+
 		if (currentTarget != null && !currentTarget.GetComponent<Death>().enabled) 
 		{
 			currentTarget = null;

@@ -29,7 +29,8 @@ public class ConnectAndJoinRandom : Photon.MonoBehaviour
     {
 		if (GameObject.FindObjectsOfType<GameObject>().Where(g => g.name == "NetworkMaster").Count () > 1)
 		{
-			Destroy (this);
+			Destroy (gameObject);
+            return;
 		}
 
 		guiMessage = GameObject.FindWithTag("gui").GetComponent<Text>();
