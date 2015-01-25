@@ -13,15 +13,18 @@ public class LevelUFO : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-        if (cowPrefab != null)
+        if (PhotonNetwork.isMasterClient)
         {
-            // Spawn NPCs
-            for (int i = 0; i < 8; i++)
+            if (cowPrefab != null)
             {
-                var position = Random.insideUnitSphere * spawnDistance + worldCenterObject.transform.position;
-                position.y = 0;
+                // Spawn NPCs
+                for (int i = 0; i < 8; i++)
+                {
+                    var position = Random.insideUnitSphere * spawnDistance + worldCenterObject.transform.position;
+                    position.y = 0;
 
-                var npc = PhotonNetwork.Instantiate(cowPrefab.name, position, Quaternion.identity, 0);
+                    var npc = PhotonNetwork.Instantiate(cowPrefab.name, position, Quaternion.identity, 0);
+                }
             }
         }
 	}
