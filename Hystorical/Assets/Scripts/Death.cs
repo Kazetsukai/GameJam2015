@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Death : MonoBehaviour {
+public class Death : Photon.MonoBehaviour {
 
 	public float DieTimer = -1;
 	
@@ -49,7 +49,7 @@ public class Death : MonoBehaviour {
 		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
 		deathsound.Play();
 	}
-	
+
 	public void DieByFire(int minLifeS, int maxLifeS)
 	{
 		DieSound();
@@ -74,7 +74,7 @@ public class Death : MonoBehaviour {
 		DieSound();
 		Die();
 	}
-	
+
 	public void Die()
 	{		
 

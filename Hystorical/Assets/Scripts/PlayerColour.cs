@@ -4,6 +4,8 @@ using System.Linq;
 
 public class PlayerColour : Photon.MonoBehaviour {
 
+    public bool NPC = false;
+
     static Color[] Colors = new Color[]
     {
         Color.red,
@@ -27,20 +29,27 @@ public class PlayerColour : Photon.MonoBehaviour {
     };
 
 	// Use this for initialization
-	void Start () {
-	    if (PhotonNetwork.connected)
+	void Start () 
+    {
+        Color color;
+	    if (!NPC && PhotonNetwork.connected)
         {
-            var color = Colors[photonView.ownerId % Colors.Length];
-            var renderers = GetComponentsInChildren<Renderer>(true);
+            color = Colors[photonView.ownerId % Colors.Length];
+        }
+        else
+        {
+            color = new Color(Random.Range(0.5f, 0.8f),Random.Range(0.5f, 0.8f),Random.Range(0.5f, 0.8f));
+        }
 
-            foreach (var renderer in renderers)
+        var renderers = GetComponentsInChildren<Renderer>(true);
+
+        foreach (var renderer in renderers)
+        {
+            foreach (var material in renderer.materials)
             {
-                foreach (var material in renderer.materials)
+                if (MaterialsToChange.Any(m => material.name.StartsWith(m)))
                 {
-                    if (MaterialsToChange.Any(m => material.name.StartsWith(m)))
-                    {
-                        material.color = color;
-                    }
+                    material.color = color;
                 }
             }
         }
