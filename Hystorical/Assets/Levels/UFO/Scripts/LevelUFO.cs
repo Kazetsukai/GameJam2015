@@ -21,7 +21,7 @@ public class LevelUFO : MonoBehaviour {
                 var position = Random.insideUnitSphere * spawnDistance + worldCenterObject.transform.position;
                 position.y = 0;
 
-                var npc = (GameObject)Instantiate(cowPrefab, position, Quaternion.identity);
+                var npc = PhotonNetwork.Instantiate(cowPrefab.name, position, Quaternion.identity, 0);
             }
         }
 	}
