@@ -608,6 +608,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 5
   MaxAccel: 10
+  LookForwards: 1
+  NormalYPos: 0
   _target: {x: 0, y: 0, z: 0}
   Remote: 0
   IsPanicked: 0
