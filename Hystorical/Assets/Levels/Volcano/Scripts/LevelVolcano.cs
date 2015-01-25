@@ -133,7 +133,7 @@ public class LevelVolcano : Photon.MonoBehaviour {
 
 			if (rockSpawnTimer >= spawnTime)
 			{
-				var pos = worldCenterObject.transform.position + new Vector3(Random.Range (0, 50f),30, Random.Range(-levelWidth / 2, levelWidth / 2));
+				var pos = worldCenterObject.transform.position + new Vector3(Random.Range (0, 50f),30, Random.Range(-levelWidth, levelWidth));
 				var rotation = Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up);
 				var scale = new Vector3(1, 1, 1) * Random.Range(1f, 4f);
 
