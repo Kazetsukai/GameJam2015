@@ -53,17 +53,20 @@ public class LevelVolcano : Photon.MonoBehaviour {
 		LevelObjectsParent = new GameObject ("LevelObjects");
 		LevelObjectsParent.transform.parent = this.transform;
 
-        if (NPCPrefab != null)
+        if (PhotonNetwork.isMasterClient)
         {
-            // Spawn NPCs
-            for (int i = 0; i < 14; i++)
+            if (NPCPrefab != null)
             {
-                var position = Random.insideUnitSphere * 10 + worldCenterObject.transform.position;
-                position.y = 0;
-                
-                var npc = (GameObject)Instantiate(NPCPrefab, position, Quaternion.identity);
+                // Spawn NPCs
+                for (int i = 0; i < 14; i++)
+                {
+                    var position = Random.insideUnitSphere * 10 + worldCenterObject.transform.position;
+                    position.y = 0;
 
-                npc.GetComponent<PersonController>().NPCIntelligence = Random.value;
+                    var npc = PhotonNetwork.Instantiate(NPCPrefab.name, position, Quaternion.identity, 0);
+
+                    npc.GetComponent<PersonController>().NPCIntelligence = Random.value;
+                }
             }
         }
 	}
