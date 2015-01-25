@@ -12,7 +12,7 @@ public class CowSoundHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		nextMooTime = Random.Range(5f, 15f);
+		nextMooTime = Random.Range(0f, 15f);
 	
 	}
 	
