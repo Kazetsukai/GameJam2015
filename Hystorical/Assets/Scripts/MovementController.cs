@@ -8,7 +8,9 @@ public class MovementController : Photon.MonoBehaviour {
 	public float MaxSpeed;
 	public float MaxAccel;
 	
-	public bool LookForwards;
+	public bool LookForwards = true;
+	
+	public float NormalYPos = 0;
 	
 	public Vector3 _target = Vector3.zero;
 	
@@ -27,10 +29,18 @@ public class MovementController : Photon.MonoBehaviour {
 	void FixedUpdate()
 	{
         if (photonView.isMine || !PhotonNetwork.connected)
-		    SetupTarget();
+		{
+			DoLogic();
+            SetupTarget();
+		}
 
 		Move();
 	}
+	
+	protected virtual void DoLogic()
+	{
+        
+    }
 	
 	protected virtual void SetupTarget()
 	{
@@ -38,7 +48,8 @@ public class MovementController : Photon.MonoBehaviour {
 	}
 	
 	private void Move()
-	{		
+	{
+		//normalise move
 		Vector3 targetNormalised = Vector3.ClampMagnitude(_target, 1) * MaxSpeed;
 		
 		var diff = targetNormalised - rigidbody.velocity;
@@ -50,12 +61,20 @@ public class MovementController : Photon.MonoBehaviour {
 			velocityChange = velocityChange.normalized * maxAccelThisFrame;
 		}
 		
+		//move
 		rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
 		
+		//fall
+        var oldpos=transform.position;
+		var ydiff = Mathf.Max(-5f * Time.fixedDeltaTime, NormalYPos-oldpos.y);
+		transform.position = new Vector3(oldpos.x,oldpos.y + ydiff,oldpos.z);
+        
+		//look forwards
 		var dir = rigidbody.velocity.normalized;
-		if (dir.magnitude > 0.01)
+		if (dir.magnitude > 0.01 && LookForwards)
 			transform.localRotation = Quaternion.LookRotation(dir);
 		
+		//set animation speed
 		if (_animator.runtimeAnimatorController != null) _animator.SetFloat("Speed", _target.magnitude);
 	}
 	
