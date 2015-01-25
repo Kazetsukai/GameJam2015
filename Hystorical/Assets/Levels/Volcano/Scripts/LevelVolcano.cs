@@ -58,10 +58,12 @@ public class LevelVolcano : Photon.MonoBehaviour {
             // Spawn NPCs
             for (int i = 0; i < 14; i++)
             {
-                var position = Random.insideUnitSphere;
+                var position = Random.insideUnitSphere * 10 + worldCenterObject.transform.position;
                 position.y = 0;
                 
-                Instantiate(NPCPrefab, position, Quaternion.identity);
+                var npc = (GameObject)Instantiate(NPCPrefab, position, Quaternion.identity);
+
+                npc.GetComponent<PersonController>().NPCIntelligence = Random.value;
             }
         }
 	}

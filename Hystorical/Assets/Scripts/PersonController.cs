@@ -11,7 +11,7 @@ public class PersonController : MovementController {
 	
 	public float NPCFollowFactor = 1f;
 	public Vector3 NPCGoal = Vector3.zero;
-	public int NPCIntelligence = 0;
+	public float NPCIntelligence = 0;
     private int NPCChangeMind = 0;
     
     protected override void SetupTarget() 

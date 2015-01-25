@@ -7,7 +7,11 @@ public class LevelSpawner : Photon.MonoBehaviour {
     public float TimeBetweenLevels = 30;
 
     float _levelTimer;
-    
+
+    static string[] Levels = new string[] {
+        "Levels/Volcano",
+        "Levels/UFO",
+    };
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +24,9 @@ public class LevelSpawner : Photon.MonoBehaviour {
         {
             if (_levelTimer >= TimeBetweenLevels)
             {
-                photonView.RPC("ChangeLevel", PhotonTargets.All, new object[] { "LevelVolcano", 20 });
+                var level = Levels[Random.Range(0, Levels.Length)];
+
+                photonView.RPC("ChangeLevel", PhotonTargets.All, level);
 
                 _levelTimer = 0;
             }
@@ -30,7 +36,7 @@ public class LevelSpawner : Photon.MonoBehaviour {
 	}
 
     [RPC]
-    void ChangeLevel(string levelName, int randomSeed)
+    void ChangeLevel(string levelName)
     {
         // Remove old level stuff
         foreach (Transform transform in LevelContainer.transform)
@@ -38,7 +44,7 @@ public class LevelSpawner : Photon.MonoBehaviour {
             Destroy(transform.gameObject);
         }
 
-        var volcanoLevel = Resources.Load<GameObject>("Levels/Volcano");
+        var volcanoLevel = Resources.Load<GameObject>(levelName);
 
         if (volcanoLevel != null)
         {
@@ -49,7 +55,8 @@ public class LevelSpawner : Photon.MonoBehaviour {
         // Move players to 0
         foreach (var player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            player.transform.position = Vector3.zero;
+            var position = Random.insideUnitSphere * 10;
+            position.y = 0;
         }
     }
 }
