@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11473268}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1452,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fd17dc49b7d6541b6dda0ac8b13d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPC: 0
 --- !u!135 &13501474
 SphereCollider:
   m_ObjectHideFlags: 1
