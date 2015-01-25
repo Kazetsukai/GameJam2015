@@ -21,14 +21,22 @@ public class UFOController : MovementController {
 	
 	protected override void DoLogic()
 	{
-		if (currentTarget == null) 
+		if (currentTarget != null && !currentTarget.GetComponent<Death>().enabled) 
 		{
-			var people = targets.Where(t=>t.name.StartsWith("Player") || t.name.StartsWith("NPC"));
-			int index = Random.Range(0, people.Count());
-			currentTarget = people.ElementAt(index);
+			currentTarget = null;
         }
         
-		var xzPosTarget = currentTarget.transform.position;		
+        if (currentTarget == null) 
+		{
+			var people = targets.Where(t=>(t.name.StartsWith("Player") || t.name.StartsWith("NPC")) && t.GetComponent<Death>().enabled);
+			if (!people.Any()) {
+				return;
+			}
+			int index = Random.Range(0, people.Count());
+			currentTarget = people.ElementAt(index);
+		}
+        
+        var xzPosTarget = currentTarget.transform.position;		
 		var xzPos = transform.position;
 		xzPosTarget.y=0;
 		xzPos.y=0;
@@ -44,15 +52,17 @@ public class UFOController : MovementController {
     protected override void SetupTarget()
 	{		
 		var centerMarker = GameObject.Find("WorldCenterMarker");
+		_target = Vector3.zero;
 		
-		_target = (currentTarget.transform.position) - transform.position;
+		if (currentTarget != null)
+			_target = (currentTarget.transform.position) - transform.position;
 	}
 	
 	void OnTriggerEnter(Collider collider) 
 	{
-		if (currentTarget == null || currentTarget.name != "Cow") 
+		if (currentTarget == null || !currentTarget.name.StartsWith("Cow")) 
 		{
-			if (new string[]{"Player", "Cow", "NPC"}.Contains(collider.gameObject.name)) 
+			if (collider.gameObject.name.StartsWith("Cow")) 
 			{
 				currentTarget = collider.gameObject;
 			}

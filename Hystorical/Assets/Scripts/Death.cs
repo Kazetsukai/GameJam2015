@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Death : Photon.MonoBehaviour {
-
+	
 	public float DieTimer = -1;
 	
 	public AudioClip[] DeathSounds;
@@ -46,8 +46,11 @@ public class Death : Photon.MonoBehaviour {
 	public void DieSound()
 	{
 		var deathsound = GetComponent<AudioSource>();
-		deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length-1)];
-		deathsound.Play();
+		if (DeathSounds.Length > 0) 
+		{
+			deathsound.clip = DeathSounds[Random.Range(0,DeathSounds.Length)];
+			deathsound.Play();
+		}
 	}
 
 	public void DieByFire(int minLifeS, int maxLifeS)
